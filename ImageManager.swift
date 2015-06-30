@@ -90,6 +90,7 @@ public class ImageManager {
                             if let err = response.error {
                                 dispatch_async(dispatch_get_main_queue(), {
                                     self.doFailure(hash, error: err)
+                                    return
                                 })
                             }
                             self.cache.add(hash, url: response.responseObject! as! NSURL)
